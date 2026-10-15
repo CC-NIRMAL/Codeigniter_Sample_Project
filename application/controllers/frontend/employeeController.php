@@ -46,6 +46,7 @@ class EmployeeController extends CI_Controller {
 
 			$this->load->model('EmployeeModel');
 			$this->EmployeeModel->updateEmployee($id, $data);
+			$this->session->set_flashdata('status', 'Employee updated successfully.');
 			redirect(base_url('employee'));
 		}else{
 			$this->edit($id);

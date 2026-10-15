@@ -3,14 +3,26 @@
 		<div class="col-md-12">
 			<div class="card">
 				<div class="card-header">
+
+
+
+
+<!-- This is the code for display update sucess message in the dashboard page after update employee details. -->
+					<?php if($this->session->flashdata('status')): ?>
+					<div class="alert alert-success" role="alert">
+						updated successfully
+					</div>
+					<?php endif; ?>
+
+
 					<h3>
 
 					DASHBOARD
 					<a href="<?php echo base_url('employee/add'); ?>" class="btn btn-primary float-right m-1">Add Employee</a>
 					<a href="<?php echo base_url('employee/login'); ?>" class="btn btn-danger float-right m-1">BACK</a>					</h3>
 				</div>
-				<div class="card-body">
-					<table class="table table-bordered table-striped">
+				<div class="card-body" >
+					<table class="table table-bordered table-striped" id="employeeTable">
 						<thead>
 							<tr>
 								<th>ID</th>
